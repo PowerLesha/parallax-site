@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./index.module.css";
 
 const stats = [
-  { number: 1200, label: "LLM Models", delay: 0 },
-  { number: 9993, label: "Paid to Data Scientists", delay: 200 },
-  { number: 388, label: "Projects Delivered", delay: 400 },
+  { number: 1.873, label: "LLM Models", delay: 0 },
+  { number: 326.734, label: "Paid to Data Scientists", delay: 200 },
+  { number: 6.557, label: "Developers", delay: 400 },
 ];
 
 const StatsSection = () => {
@@ -41,7 +41,7 @@ const StatsSection = () => {
         }
       },
       {
-        rootMargin: "0px 0px -150px 0px",
+        rootMargin: "0px 0px -50px 0px",
         threshold: 0,
       }
     );
@@ -61,7 +61,11 @@ const StatsSection = () => {
           className={`${styles.statBox} ${showStats ? styles.visible : ""}`}
           style={{ transitionDelay: `${delay}ms` }}
         >
-          <p className={styles.statNumber}>{number}</p>
+          <p className={styles.statNumber}>
+            {label === "Paid to Data Scientists" ? "$" : ""}
+            {number.toString().replace(".", ",")}
+          </p>
+
           <p className={styles.statLabel}>{label}</p>
         </div>
       ))}

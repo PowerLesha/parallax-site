@@ -25,7 +25,7 @@ const MainDescribtion = ({
   titleParallaxStyle,
   imageParallaxStyle,
 }: MainDescribtionProps) => {
-  const scrolled = useScrollPosition(10);
+  const scrolled = useScrollPosition(0);
   const rotation = Number(scrolled) * 40;
   const translateY = Math.min(Number(scrolled) * -25, 0);
 
