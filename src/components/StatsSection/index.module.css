@@ -1,0 +1,29 @@
+.statsContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 40px;
+  z-index: 3;
+}
+
+.statBox {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.statBox.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.statNumber {
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.statLabel {
+  font-size: 18px;
+  color: #ccc;
+}

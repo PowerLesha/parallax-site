@@ -8,7 +8,7 @@
   letter-spacing: 0;
   color: #ffffff;
   cursor: pointer;
-
+  z-index: 3;
   background: linear-gradient(#000, #000) padding-box,
     linear-gradient(106.2deg, #963488 -12.33%, #fc6f32 50.28%, #ff4a59 114.17%)
       border-box;
