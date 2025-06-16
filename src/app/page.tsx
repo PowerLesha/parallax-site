@@ -9,6 +9,9 @@ export default function Home() {
       <main className={styles.main}>
         Test task
         <Button onClick={() => alert("Clicked!")}>Click Me</Button>
+        <Button borderless onClick={() => alert("Clicked!")}>
+          Click on borderless button
+        </Button>
       </main>
     </div>
   );

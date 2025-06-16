@@ -8,6 +8,7 @@
   letter-spacing: 0;
   color: white;
   cursor: pointer;
+
   background: linear-gradient(#000, #000) padding-box,
     linear-gradient(106.2deg, #963488 -12.33%, #fc6f32 50.28%, #ff4a59 114.17%)
       border-box;
@@ -26,6 +27,34 @@
     linear-gradient(106.2deg, #963488 -12.33%, #fc6f32 50.28%, #ff4a59 114.17%)
       padding-box;
   color: white;
+}
+
+.borderless {
+  border: none;
+  background: transparent;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.borderless {
+  border: none;
+  background: transparent;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.borderless:hover {
+  background: linear-gradient(
+    106.2deg,
+    #963488 -12.33%,
+    #fc6f32 50.28%,
+    #ff4a59 114.17%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border: none;
+  background-color: transparent;
 }
 
 @media (max-width: 768px) {

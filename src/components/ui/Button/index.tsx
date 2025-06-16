@@ -6,6 +6,7 @@ type ButtonProps = {
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
   className?: string;
+  borderless?: boolean;
 };
 
 const Button = ({
@@ -13,12 +14,15 @@ const Button = ({
   onClick,
   type = "button",
   className = "",
+  borderless = false,
 }: ButtonProps) => {
   return (
     <button
       type={type}
       onClick={onClick}
-      className={`${styles.button} ${className}`}
+      className={`${styles.button} ${
+        borderless ? styles.borderless : ""
+      } ${className}`}
     >
       {children}
     </button>
