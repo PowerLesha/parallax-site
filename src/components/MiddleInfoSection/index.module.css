@@ -1,0 +1,59 @@
+.middleInfoSection {
+  display: flex;
+  flex-direction: column;
+  text-align: flex-start;
+  position: relative;
+}
+
+.starWrapper {
+  opacity: 0;
+  transform: translateY(-30px) scale(0.95);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.starWrapper.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.starImage {
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+}
+
+.description {
+  font-size: 22px;
+  color: white;
+  margin: 24px 0;
+}
+
+.middleInfo {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.middleInfo h3 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 64px;
+  max-width: 80%;
+}
+
+.middleInfo p {
+  font-size: 24px;
+  max-width: 60%;
+}
+
+@media (max-width: 767px) {
+  .middleInfo h3 {
+    font-size: 34px;
+  }
+
+  .middleInfo p {
+    font-size: 14px;
+  }
+}
