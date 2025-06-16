@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import React from "react";
 import { ParallaxProvider } from "react-scroll-parallax";
 import MiddleInfoSection from "@/components/MiddleInfoSection";
+import LeaderBoard from "@/components/LeaderBoard";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
           buttonText="Use the cutting edge AI"
           onClick={() => ""}
         />
+        <LeaderBoard />
       </div>
     </ParallaxProvider>
   );
