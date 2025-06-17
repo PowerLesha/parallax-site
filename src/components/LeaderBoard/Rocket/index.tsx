@@ -16,7 +16,7 @@ const Rocket: React.FC<RocketProps> = ({ scrollDirection, isVisible }) => {
 
     if (!isVisible) {
       hasLaunchedRef.current = false;
-      controls.start({ opacity: 0, y: 0 });
+      controls.set({ opacity: 0, y: 0 });
       return;
     }
 
@@ -25,9 +25,9 @@ const Rocket: React.FC<RocketProps> = ({ scrollDirection, isVisible }) => {
         if (!hasLaunchedRef.current) {
           hasLaunchedRef.current = true;
           controls.start({
-            y: -380,
-            opacity: 1,
-            transition: { duration: 2, ease: "easeOut", delay: 1 },
+            y: -1200,
+            opacity: 3,
+            transition: { duration: 7, ease: "easeOut", delay: 1 },
           });
         }
       } else {
@@ -35,16 +35,13 @@ const Rocket: React.FC<RocketProps> = ({ scrollDirection, isVisible }) => {
     } else {
       if (scrollDirection === "down") {
         controls.start({
-          y: -600,
+          y: -900,
           opacity: 1,
-          transition: { duration: 2, ease: "easeOut", delay: 1 },
+          transition: { duration: 5, ease: "easeOut", delay: 1 },
         });
       } else {
-        controls.start({
-          y: 0,
-          opacity: 1,
-          transition: { duration: 2, ease: "easeOut" },
-        });
+        hasLaunchedRef.current = false;
+        controls.set({ y: 0, opacity: 0 });
       }
     }
   }, [scrollDirection, isVisible, controls]);
