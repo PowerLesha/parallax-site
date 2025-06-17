@@ -70,6 +70,26 @@
   font-size: 18px;
 }
 
+.expandButton {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.arrowCircle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid white;
+  border-radius: 50%;
+  color: white;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
 @media (max-width: 768px) {
   .th,
   .td {
