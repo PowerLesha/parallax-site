@@ -14,16 +14,23 @@ const StatsSection = () => {
   const lastScrollY = useRef(0);
   const statsRef = useRef<HTMLDivElement>(null);
 
+  const isMobile =
+    typeof window !== "undefined" ? window.innerWidth <= 768 : false;
+
   useEffect(() => {
     const onScroll = () => {
       const currentScrollY = window.scrollY;
       setScrollY(currentScrollY);
       setScrollDirection(currentScrollY > lastScrollY.current ? "down" : "up");
       lastScrollY.current = currentScrollY;
+
+      if (isMobile && currentScrollY === 0) {
+        setShowStats(false);
+      }
     };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [isMobile]);
 
   useEffect(() => {
     if (!statsRef.current) return;
@@ -36,7 +43,11 @@ const StatsSection = () => {
           scrollY > 100
         ) {
           setShowStats(true);
-        } else if (!entry.isIntersecting && scrollDirection === "up") {
+        } else if (
+          !entry.isIntersecting &&
+          scrollDirection === "up" &&
+          (!isMobile ? scrollY === 0 : true)
+        ) {
           setShowStats(false);
         }
       },
@@ -51,7 +62,7 @@ const StatsSection = () => {
     return () => {
       if (statsRef.current) observer.unobserve(statsRef.current);
     };
-  }, [scrollDirection, scrollY]);
+  }, [scrollDirection, scrollY, isMobile]);
 
   return (
     <div ref={statsRef} className={styles.statsContainer}>

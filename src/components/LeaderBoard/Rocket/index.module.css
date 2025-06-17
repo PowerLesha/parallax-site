@@ -1,0 +1,53 @@
+.rocketContainer {
+  position: fixed;
+  left: 100px;
+  bottom: 150px;
+  width: auto;
+  height: auto;
+  pointer-events: none;
+  z-index: 1000;
+  overflow: visible;
+}
+
+.rocket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.rocketImg {
+  z-index: 3;
+}
+
+.fireTrail {
+  position: absolute;
+  top: 100%;
+  width: 12px;
+  height: 200px;
+  background: linear-gradient(
+    346.96deg,
+    rgba(150, 52, 136, 0) 38.72%,
+    #fc6f32 59.86%,
+    #ff4a59 75.84%,
+    #ff4a59 90.6%
+  );
+  z-index: 3;
+  border-radius: 20px;
+  filter: blur(2px);
+}
+
+@media (max-width: 768px) {
+  .rocketContainer {
+    left: 10px;
+    bottom: -100px;
+  }
+
+  .rocketImg {
+    height: 100px;
+  }
+
+  .fireTrail {
+    height: 100px;
+  }
+}
