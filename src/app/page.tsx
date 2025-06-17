@@ -7,6 +7,7 @@ import React from "react";
 import { ParallaxProvider } from "react-scroll-parallax";
 import MiddleInfoSection from "@/components/MiddleInfoSection";
 import LeaderBoard from "@/components/LeaderBoard";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
           onClick={() => ""}
         />
         <LeaderBoard />
+        <Footer />
       </div>
     </ParallaxProvider>
   );
