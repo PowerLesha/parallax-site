@@ -124,7 +124,7 @@ const LeaderBoard = () => {
           ))}
         </motion.tbody>
       </table>
-      <div className={styles.rocketContainer}>
+      {/* <div className={styles.rocketContainer}>
         <motion.div
           className={styles.rocket}
           animate={rocketControls}
@@ -137,7 +137,7 @@ const LeaderBoard = () => {
             className={styles.rocketImg}
           />
         </motion.div>
-      </div>
+      </div> */}
     </section>
   );
 };
