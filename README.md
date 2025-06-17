@@ -30,10 +30,11 @@ How to Run
 
 1. Clone the repo:
    git clone https://github.com/PowerLesha/parallax-site
-   cd parallax-site
 
-2. Install dependencies:
+2. cd parallax-site
+
+3. Install dependencies:
    npm install
 
-3. Start the dev server:
+4. Start the dev server:
    npm run dev
