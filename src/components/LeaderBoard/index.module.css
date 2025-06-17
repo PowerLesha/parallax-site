@@ -119,4 +119,8 @@
   .leaderBoardHeader p {
     font-size: 18px;
   }
+
+  .expandButton {
+    margin-top: 0;
+  }
 }

@@ -131,6 +131,7 @@ const LeaderBoard = () => {
       </div>
 
       <Rocket scrollDirection={scrollDirection} isVisible={isInView} />
+      <div style={{ height: "600px" }}></div>
     </section>
   );
 };
