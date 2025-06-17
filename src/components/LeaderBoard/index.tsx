@@ -1,9 +1,10 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import styles from "./index.module.css";
 import { FiArrowUp, FiArrowDown } from "react-icons/fi";
 import { motion, useAnimation, useInView } from "framer-motion";
 import Button from "../ui/Button";
 import { fakeData, RowData } from "@/utils/fakeData";
+import Rocket from "./Rocket";
 
 const containerVariants = {
   hidden: {},
@@ -26,41 +27,20 @@ const LeaderBoard = () => {
     margin: "-200px 0px -200px 0px",
   });
 
-  const rocketControls = useAnimation();
+  const isInView = useInView(ref, { margin: "-100px 0px -100px 0px" });
+  const [scrollDirection, setScrollDirection] = useState<"up" | "down">("down");
   const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      const scrollingDown = currentScrollY > lastScrollY.current;
-      const isMobile = window.innerWidth <= 768;
-
-      if (inView) {
-        if (scrollingDown) {
-          rocketControls.start({ y: 0, opacity: 1 });
-        }
-
-        if (isMobile) {
-          if (scrollingDown) {
-            rocketControls.start({ y: -380, opacity: 1 });
-          } else {
-            rocketControls.start({ y: 0, opacity: 1 });
-          }
-        } else {
-          if (scrollingDown) {
-            rocketControls.start({ y: -600, opacity: 1 });
-          } else {
-            rocketControls.start({ y: 0, opacity: 1 });
-          }
-        }
-      }
-
+      setScrollDirection(currentScrollY > lastScrollY.current ? "down" : "up");
       lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [inView, rocketControls]);
+  }, []);
 
   useEffect(() => {
     if (inView) controls.start("visible");
@@ -124,20 +104,7 @@ const LeaderBoard = () => {
           ))}
         </motion.tbody>
       </table>
-      {/* <div className={styles.rocketContainer}>
-        <motion.div
-          className={styles.rocket}
-          animate={rocketControls}
-          transition={{ duration: 2, ease: "easeOut" }}
-        >
-          <div className={styles.fireTrail} />
-          <img
-            src="/images/rocket.png"
-            alt="Rocket"
-            className={styles.rocketImg}
-          />
-        </motion.div>
-      </div> */}
+      <Rocket scrollDirection={scrollDirection} isVisible={isInView} />
     </section>
   );
 };
