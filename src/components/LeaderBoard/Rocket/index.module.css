@@ -1,7 +1,7 @@
 .rocketContainer {
   position: fixed;
   left: 100px;
-  bottom: 150px;
+  bottom: -450px;
   width: auto;
   height: auto;
   pointer-events: none;
@@ -40,7 +40,7 @@
 @media (max-width: 768px) {
   .rocketContainer {
     left: 10px;
-    bottom: -100px;
+    bottom: -250px;
   }
 
   .rocketImg {

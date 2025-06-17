@@ -27,7 +27,7 @@ const Rocket: React.FC<RocketProps> = ({ scrollDirection, isVisible }) => {
           controls.start({
             y: -1200,
             opacity: 3,
-            transition: { duration: 7, ease: "easeOut", delay: 1 },
+            transition: { duration: 7, ease: "easeOut", delay: 0 },
           });
         }
       } else {
@@ -37,7 +37,7 @@ const Rocket: React.FC<RocketProps> = ({ scrollDirection, isVisible }) => {
         controls.start({
           y: -900,
           opacity: 1,
-          transition: { duration: 5, ease: "easeOut", delay: 1 },
+          transition: { duration: 5, ease: "easeOut", delay: 0 },
         });
       } else {
         hasLaunchedRef.current = false;
